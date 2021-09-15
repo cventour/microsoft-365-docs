@@ -101,11 +101,29 @@ Specify whether the antivirus engine runs in passive mode. Passive mode has the 
 |**Comments**|Available in Microsoft Defender for Endpoint version 100.67.60 or higher.|
 |||
 
+#### Scan after definition update
+
+Specify whether to start a process scan after new security intelligence updates are downloaded on the device. Enabling this setting will trigger an antivirus scan on the running processes of the device.
+
+<br>
+
+****
+
+|Section|Value|
+|---|---|
+|**Domain**|`com.microsoft.wdav`|
+|**Key**|scanAfterDefinitionUpdate|
+|**Data type**|Boolean|
+|**Possible values**|false (default) <p> true|
+|**Comments**|Available in Microsoft Defender for Endpoint version 101.41.10 or higher.|
+|||
+
 #### Exclusion merge policy
 
 Specify the merge policy for exclusions. This can be a combination of administrator-defined and user-defined exclusions (`merge`) or only administrator-defined exclusions (`admin_only`). This setting can be used to restrict local users from defining their own exclusions.
 
 <br>
+
 
 ****
 
@@ -738,6 +756,8 @@ The following templates contain entries for all settings described in this docum
         <false/>
         <key>maximumOnDemandScanThreads</key>
         <integer>1</integer>
+        <key>scanAfterDefinitionUpdate</key>
+        <false/>
         <key>exclusions</key>
         <array>
             <dict>
@@ -890,6 +910,8 @@ The following templates contain entries for all settings described in this docum
                     <false/>
                     <key>maximumOnDemandScanThreads</key>
                     <integer>1</integer>
+                    <key>scanAfterDefinitionUpdate</key>
+                    <false/>
                     <key>exclusions</key>
                     <array>
                         <dict>
